@@ -35,4 +35,12 @@ export class TodolistComponent {
         this.todos.push(todo);
         localStorage.setItem("todos",JSON.stringify(this.todos));
       }
+      
+      toggeltodo(todo:Todo)
+      {
+        console.log(todo);
+        const index = this.todos.indexOf(todo);
+        this.todos[index].Active = !this.todos[index].Active
+        localStorage.setItem("todos",JSON.stringify(this.todos));
+      }
 } 

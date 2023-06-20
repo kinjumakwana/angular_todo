@@ -8,7 +8,9 @@ import { Todo } from 'src/app/Todo';
 })
 export class TodoItemComponent {
     @Input()todo: Todo = new Todo;
+
     @Output() todoDelete:EventEmitter<Todo> = new EventEmitter();
+    @Output() todoCheckbox:EventEmitter<Todo> = new EventEmitter();
     constructor(){
 
     }
@@ -16,5 +18,10 @@ export class TodoItemComponent {
     {
       this.todoDelete.emit(todo)
       console.log("On click Triggered")
+    }
+    Oncheckboxclick(todo: Todo)
+    { 
+      console.log(todo)
+      this.todoCheckbox.emit(todo);
     }
 }
